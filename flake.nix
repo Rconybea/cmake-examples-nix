@@ -160,6 +160,8 @@
                   overlays.default = final: prev: (
                     let
                       boost = prev.boost182;
+                      python3Packages = prev.python311Packages;
+                      pybind11 = python3Packages.pybind11;
 
                     in
                       {
@@ -186,115 +188,115 @@
                             (old: { src = cmake-examples-ex3-path; });
 
                         cmake-examples-ex4 =
-                          (prev.callPackage ./pkgs/ex4.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex4.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex4-path; });
 
                         cmake-examples-ex5 =
-                          (prev.callPackage ./pkgs/ex5.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex5.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex5-path; });
 
                         cmake-examples-ex6 =
-                          (prev.callPackage ./pkgs/ex6.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex6.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex6-path; });
 
                         cmake-examples-ex7 =
-                          (prev.callPackage ./pkgs/ex7.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex7.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex7-path; });
 
                         cmake-examples-ex8 =
-                          (prev.callPackage ./pkgs/ex8.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex8.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex8-path; });
 
                         cmake-examples-ex9 =
-                          (prev.callPackage ./pkgs/ex9.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex9.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex9-path; });
 
                         cmake-examples-ex10 =
-                          (prev.callPackage ./pkgs/ex10.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex10.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex10-path; });
 
                         cmake-examples-ex11 =
-                          (prev.callPackage ./pkgs/ex11.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex11.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex11-path; });
 
                         cmake-examples-ex12 =
-                          (prev.callPackage ./pkgs/ex12.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex12.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex12-path; });
 
                         cmake-examples-ex13 =
-                          (prev.callPackage ./pkgs/ex13.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex13.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex13-path; });
 
                         cmake-examples-ex14 =
-                          (prev.callPackage ./pkgs/ex14.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex14.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex14-path; });
 
                         cmake-examples-ex15 =
-                          (prev.callPackage ./pkgs/ex15.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex15.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex15-path; });
 
                         cmake-examples-ex16 =
-                          (prev.callPackage ./pkgs/ex16.nix { boost = prev.boost182; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex16.nix { boost = boost; }).overrideAttrs
                             (old: { src = cmake-examples-ex16-path; });
 
                         cmake-examples-ex17 =
-                          (prev.callPackage ./pkgs/ex17.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex17.nix { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; }).overrideAttrs
                             (old: { src = cmake-examples-ex17-path; });
 
                         cmake-examples-ex18 =
-                          (prev.callPackage ./pkgs/ex18.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex18.nix { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; }).overrideAttrs
                             (old: { src = cmake-examples-ex18-path; });
 
                         cmake-examples-ex19 =
-                          (prev.callPackage ./pkgs/ex19.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex19.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex19-path; });
 
                         cmake-examples-ex20 =
-                          (prev.callPackage ./pkgs/ex20.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex20.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex20-path; });
 
                         cmake-examples-ex21 =
-                          (prev.callPackage ./pkgs/ex21.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex21-path; });
 
                         cmake-examples-ex21a =
-                          (prev.callPackage ./pkgs/ex21a.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21a.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex21a-path; });
 
                         cmake-examples-ex21b =
-                          (prev.callPackage ./pkgs/ex21b.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21b.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex21b-path; });
 
                         cmake-examples-ex21c =
-                          (prev.callPackage ./pkgs/ex21c.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21c.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex21c-path; });
 
                         cmake-examples-ex21d =
-                          (prev.callPackage ./pkgs/ex21d.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21d.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex21d-path; });
 
                         cmake-examples-ex21e =
-                          (prev.callPackage ./pkgs/ex21e.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21e.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex21e-path; });
 
                         cmake-examples-ex21f =
-                          (prev.callPackage ./pkgs/ex21f.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21f.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex21f-path; });
 
                         cmake-examples-ex21g =
-                          (prev.callPackage ./pkgs/ex21g.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21g.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex21g-path; });
 
                         cmake-examples-ex21h =
-                          (prev.callPackage ./pkgs/ex21h.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21h.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex21h-path; });
 
                         cmake-examples-ex21i =
-                          (prev.callPackage ./pkgs/ex21i.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21i.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex21i-path; });
 
                         cmake-examples-ex21j =
-                          (prev.callPackage ./pkgs/ex21j.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21j.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
                             (old: { src = cmake-examples-ex21j-path; });
 
                       });

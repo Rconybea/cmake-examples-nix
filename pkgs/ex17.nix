@@ -1,9 +1,10 @@
 {
   # dependencies
-  stdenv, cmake, catch2, pkg-config, pybind11, boost, zlib, # ... other deps here
+  stdenv, cmake, catch2, pkg-config, python3Packages, boost, zlib, # ... other deps here
 
   # args
   #   someconfigurationoption ? false
+  pybind11 ? python3Packages.pybind11
 } :
 
 stdenv.mkDerivation (finalattrs:
