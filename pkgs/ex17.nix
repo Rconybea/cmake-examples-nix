@@ -1,6 +1,6 @@
 {
   # dependencies
-  stdenv, cmake, catch2, pkg-config, python311Packages, boost182, zlib, # ... other deps here
+  stdenv, cmake, catch2, pkg-config, pybind11, boost, zlib, # ... other deps here
 
   # args
   #   someconfigurationoption ? false
@@ -19,5 +19,5 @@ stdenv.mkDerivation (finalattrs:
     # run unit tests
     doCheck = true;
 
-    buildInputs = [ cmake pkg-config python311Packages.pybind11 catch2 boost182 zlib ];
+    buildInputs = [ cmake pkg-config pybind11 catch2 boost zlib ];
   })
