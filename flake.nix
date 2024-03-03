@@ -250,7 +250,7 @@
                             (old: { src = cmake-examples-ex18-path; });
 
                         cmake-examples-ex19 =
-                          (prev.callPackage ./pkgs/ex19.nix { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex19.nix extras2).overrideAttrs
                             (old: { src = cmake-examples-ex19-path; });
 
                         cmake-examples-ex20 =
@@ -258,7 +258,7 @@
                             (old: { src = cmake-examples-ex20-path; });
 
                         cmake-examples-ex21 =
-                          (prev.callPackage ./pkgs/ex21.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21.nix extras2).overrideAttrs
                             (old: { src = cmake-examples-ex21-path; });
 
                         cmake-examples-ex21a =
