@@ -4,6 +4,7 @@
 
   # args
   #   someconfigurationoption ? false
+  pybind11 ? python3Packages.pybind11
 } :
 
 stdenv.mkDerivation (finalattrs:
