@@ -1,6 +1,6 @@
 {
   # dependencies
-  stdenv, cmake, pkg-config, boost182 # ... other deps here
+  stdenv, cmake, pkg-config, boost # ... other deps here
 
   # args
 
@@ -31,7 +31,7 @@ stdenv.mkDerivation (finalattrs:
 #      #rev = "c0472c9d7e4d2c53bfb977d3182380832fe96645";
 #    });
 
-    buildInputs = [ cmake pkg-config boost182 ];
+    buildInputs = [ cmake pkg-config boost ];
 
     installPhase = ''
       mkdir -p $out

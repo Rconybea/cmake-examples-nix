@@ -30,6 +30,8 @@
   #  ex21a .. ex21j
   #  ex22
   #
+
+
   inputs.cmake-examples-ex1-path   = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex1"; };
   inputs.cmake-examples-ex1b-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex1b"; };
   inputs.cmake-examples-ex1c-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex1c"; };
@@ -102,340 +104,199 @@
               cmake-examples-ex21j-path,
             }:
 
-  flake-utils.lib.eachDefaultSystem
-    (system :
-      let
-        # note: .clang16Stdenv appears to be latest available as of feb2024
-        env = (if system == "aarch64-linux" then pkgs.clang16Stdenv else pkgs.stdenv);
+              let
+                out = system :
+                  let
+                    pkgs = nixpkgs.legacyPackages.${system};
+                    appliedOverlay = self.overlays.default pkgs pkgs;
+                  in
+                    {
+                      # reminder:
+                      # 'packages' comprises the output of this flake;
+                      # each defn invokes a build
+                      #   ./pkgs/$example.nix
+                      # using
+                      #   cmake-examples-$example-path
+                      # above for source code
 
-        # aarch64-darwin aarch64-linux x86_64-darwin:
-        #env = pkgs.clang16Stdenv;
+                      packages.cmake-examples-ex1b  = appliedOverlay.cmake-examples-ex1b;
+                      packages.cmake-examples-ex1c  = appliedOverlay.cmake-examples-ex1c;
+                      packages.cmake-examples-ex2   = appliedOverlay.cmake-examples-ex2;
+                      packages.cmake-examples-ex3   = appliedOverlay.cmake-examples-ex3;
+                      packages.cmake-examples-ex4   = appliedOverlay.cmake-examples-ex4;
+                      packages.cmake-examples-ex5   = appliedOverlay.cmake-examples-ex5;
+                      packages.cmake-examples-ex6   = appliedOverlay.cmake-examples-ex6;
+                      packages.cmake-examples-ex7   = appliedOverlay.cmake-examples-ex7;
+                      packages.cmake-examples-ex8   = appliedOverlay.cmake-examples-ex8;
+                      packages.cmake-examples-ex9   = appliedOverlay.cmake-examples-ex9;
+                      packages.cmake-examples-ex10  = appliedOverlay.cmake-examples-ex10;
+                      packages.cmake-examples-ex11  = appliedOverlay.cmake-examples-ex11;
+                      packages.cmake-examples-ex12  = appliedOverlay.cmake-examples-ex12;
+                      packages.cmake-examples-ex13  = appliedOverlay.cmake-examples-ex13;
+                      packages.cmake-examples-ex14  = appliedOverlay.cmake-examples-ex14;
+                      packages.cmake-examples-ex15  = appliedOverlay.cmake-examples-ex15;
+                      packages.cmake-examples-ex16  = appliedOverlay.cmake-examples-ex16;
+                      packages.cmake-examples-ex17  = appliedOverlay.cmake-examples-ex17;
+                      packages.cmake-examples-ex18  = appliedOverlay.cmake-examples-ex18;
+                      packages.cmake-examples-ex19  = appliedOverlay.cmake-examples-ex19;
+                      packages.cmake-examples-ex20  = appliedOverlay.cmake-examples-ex20;
+                      packages.cmake-examples-ex21  = appliedOverlay.cmake-examples-ex21;
+                      packages.cmake-examples-ex21a = appliedOverlay.cmake-examples-ex21a;
+                      packages.cmake-examples-ex21b = appliedOverlay.cmake-examples-ex21b;
+                      packages.cmake-examples-ex21c = appliedOverlay.cmake-examples-ex21c;
+                      packages.cmake-examples-ex21d = appliedOverlay.cmake-examples-ex21d;
+                      packages.cmake-examples-ex21e = appliedOverlay.cmake-examples-ex21e;
+                      packages.cmake-examples-ex21f = appliedOverlay.cmake-examples-ex21f;
+                      packages.cmake-examples-ex21g = appliedOverlay.cmake-examples-ex21g;
+                      packages.cmake-examples-ex21h = appliedOverlay.cmake-examples-ex21h;
+                      packages.cmake-examples-ex21i = appliedOverlay.cmake-examples-ex21i;
+                      packages.cmake-examples-ex21j = appliedOverlay.cmake-examples-ex21j;
+                    };
+              in
+                flake-utils.lib.eachDefaultSystem out // {
+                  # Using overlay to introduce local packages (cmake-examples-ex1b etc.).
+                  # These packages are not present in nixpkgs
+                  #
+                  overlays.default = final: prev: (
+                    let
+                      boost = prev.boost182;
 
-        pkgs = nixpkgs.legacyPackages.${system};
+                    in
+                      {
+                        #cmake-examples-ex1b = prev.cmake-examples-ex1b.overrideAttrs (prev: {src = cmake-examples-ex1b-path; });
 
-        # .packages introduced below
+                        # in the below:
+                        # the .overrideAttrs() call applies to derivation-inputs,  i.e. the attribute set passed to stdenv.mkDerivation()
+                        #
 
-        our_pkgs = self.packages.${system};
+                        cmake-examples-ex1b =
+                          (prev.callPackage ./pkgs/ex1b.nix {}).overrideAttrs
+                            (old: { src = cmake-examples-ex1b-path; });
 
-        empty_install_phase = ''
-          mkdir -p $out
-          echo 'No install phase!'
-        '';
+                        cmake-examples-ex1c =
+                          (prev.callPackage ./pkgs/ex1c.nix {}).overrideAttrs
+                            (old: { src = cmake-examples-ex1c-path; });
 
-        cmake-examples-version = "1.0";
+                        cmake-examples-ex2 =
+                          (prev.callPackage ./pkgs/ex2.nix {}).overrideAttrs
+                            (old: { src = cmake-examples-ex2-path; });
 
-        cmake-examples-ex5-deriv = env.mkDerivation {
-          name = "cmake-examples-ex5"; version = cmake-examples-version;
-          src = cmake-examples-ex5-path;
-          installPhase = empty_install_phase;
-          nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
-        };
+                        cmake-examples-ex3 =
+                          (prev.callPackage ./pkgs/ex3.nix { boost = boost; }).overrideAttrs
+                            (old: { src = cmake-examples-ex3-path; });
 
-      in
-        {
-          packages = rec {
-            # member packages.foo appears as xo_pkgs.foo
-            # (xo_pkgs adds ${system} qualifier)
+                        cmake-examples-ex4 =
+                          (prev.callPackage ./pkgs/ex4.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex4-path; });
 
-            cmake-examples-ex1 = pkgs.callPackage ./pkgs/ex1.nix { cmake-examples-ex1-path = cmake-examples-ex1-path; };
+                        cmake-examples-ex5 =
+                          (prev.callPackage ./pkgs/ex5.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex5-path; });
 
-#            cmake-examples-ex1 = env.mkDerivation {
-#              name = "cmake-examples-ex1"; version = cmake-examples-version;
-#              src = cmake-examples-ex1-path;
-#              installPhase = empty_install_phase;
-#              nativeBuildInputs = [ pkgs.cmake ];
-#            };
+                        cmake-examples-ex6 =
+                          (prev.callPackage ./pkgs/ex6.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex6-path; });
 
-            # reminder: can't chain deriv deps here via propagatedBuildInputs etc.
-            #           That would be suitable if ex{n+1} depended on ex{n} _output_
+                        cmake-examples-ex7 =
+                          (prev.callPackage ./pkgs/ex7.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex7-path; });
 
-            cmake-examples-ex1b = pkgs.callPackage ./pkgs/ex1b.nix { cmake-examples-ex1b-path = cmake-examples-ex1b-path; };
+                        cmake-examples-ex8 =
+                          (prev.callPackage ./pkgs/ex8.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex8-path; });
 
-#            cmake-examples-ex1b = env.mkDerivation {
-#              name = "cmake-examples-ex1b"; version = cmake-examples-version;
-#              src = cmake-examples-ex1b-path;
-#              installPhase = empty_install_phase;
-#              nativeBuildInputs = [ pkgs.cmake ];
-#            };
+                        cmake-examples-ex9 =
+                          (prev.callPackage ./pkgs/ex9.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex9-path; });
 
-            cmake-examples-ex1c = env.mkDerivation {
-              name = "cmake-examples-ex1c"; version = cmake-examples-version;
-              src = cmake-examples-ex1c-path;
-              installPhase = empty_install_phase;
-              nativeBuildInputs = [ pkgs.cmake ];   # don't do this -- breaks cross-compilation
-            };
+                        cmake-examples-ex10 =
+                          (prev.callPackage ./pkgs/ex10.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex10-path; });
 
-            cmake-examples-ex2 = env.mkDerivation {
-              name = "cmake-examples-ex2"; version = cmake-examples-version;
-              src = cmake-examples-ex2-path;
-              installPhase = empty_install_phase;
-              nativeBuildInputs = [ pkgs.cmake ];
-            };
+                        cmake-examples-ex11 =
+                          (prev.callPackage ./pkgs/ex11.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex11-path; });
 
-            # pkgs.boost182 current asof feb2024
-            cmake-examples-ex3 = env.mkDerivation {
-              name = "cmake-examples-ex3"; version = cmake-examples-version;
-              src = cmake-examples-ex3-path;
-              installPhase = empty_install_phase;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 ];
-            };
+                        cmake-examples-ex12 =
+                          (prev.callPackage ./pkgs/ex12.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex12-path; });
 
-            cmake-examples-ex4 = env.mkDerivation {
-              name = "cmake-examples-ex4"; version = cmake-examples-version;
-              src = cmake-examples-ex4-path;
-              installPhase = empty_install_phase;
-              propagatedBuildInputs = [ our_pkgs.cmake-examples-ex3 ];
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex13 =
+                          (prev.callPackage ./pkgs/ex13.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex13-path; });
 
-            cmake-examples-ex5 = env.mkDerivation {
-              name = "cmake-examples-ex5"; version = cmake-examples-version;
-              src = cmake-examples-ex5-path;
-              installPhase = empty_install_phase;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex14 =
+                          (prev.callPackage ./pkgs/ex14.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex14-path; });
 
-            # first example with non-trivial install step -> non-trivial result/ dir after building
-            #
-            cmake-examples-ex6 = env.mkDerivation {
-              name = "cmake-examples-ex6"; version = cmake-examples-version;
-              src = cmake-examples-ex6-path;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex15 =
+                          (prev.callPackage ./pkgs/ex15.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex15-path; });
 
-            cmake-examples-ex7 = env.mkDerivation {
-              name = "cmake-examples-ex7"; version = cmake-examples-version;
-              src = cmake-examples-ex7-path;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex16 =
+                          (prev.callPackage ./pkgs/ex16.nix { boost = prev.boost182; }).overrideAttrs
+                            (old: { src = cmake-examples-ex16-path; });
 
-            cmake-examples-ex8 = env.mkDerivation {
-              name = "cmake-examples-ex8"; version = cmake-examples-version;
-              src = cmake-examples-ex8-path;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex17 =
+                          (prev.callPackage ./pkgs/ex17.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex17-path; });
 
-            cmake-examples-ex9 = env.mkDerivation {
-              name = "cmake-examples-ex9"; version = cmake-examples-version;
-              src = cmake-examples-ex9-path;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex18 =
+                          (prev.callPackage ./pkgs/ex18.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex18-path; });
 
-            cmake-examples-ex10 = env.mkDerivation {
-              name = "cmake-examples-ex10"; version = cmake-examples-version;
-              src = cmake-examples-ex10-path;
-              doCheck = true;   # run unit tests starting with cmake-examples-ex10
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex19 =
+                          (prev.callPackage ./pkgs/ex19.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex19-path; });
 
-            cmake-examples-ex11 = env.mkDerivation {
-              name = "cmake-examples-ex11"; version = cmake-examples-version;
-              src = cmake-examples-ex11-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex20 =
+                          (prev.callPackage ./pkgs/ex20.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex20-path; });
 
-            cmake-examples-ex12 = env.mkDerivation {
-              name = "cmake-examples-ex12"; version = cmake-examples-version;
-              src = cmake-examples-ex12-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex21 =
+                          (prev.callPackage ./pkgs/ex21.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex21-path; });
 
-            cmake-examples-ex13 = env.mkDerivation {
-              name = "cmake-examples-ex13"; version = cmake-examples-version;
-              src = cmake-examples-ex13-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex21a =
+                          (prev.callPackage ./pkgs/ex21a.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex21a-path; });
 
-            cmake-examples-ex14 = env.mkDerivation {
-              name = "cmake-examples-ex14"; version = cmake-examples-version;
-              src = cmake-examples-ex14-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex21b =
+                          (prev.callPackage ./pkgs/ex21b.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex21b-path; });
 
-            cmake-examples-ex15 = env.mkDerivation {
-              name = "cmake-examples-ex15"; version = cmake-examples-version;
-              src = cmake-examples-ex15-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex21c =
+                          (prev.callPackage ./pkgs/ex21c.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex21c-path; });
 
-            cmake-examples-ex16 = env.mkDerivation {
-              name = "cmake-examples-ex16"; version = cmake-examples-version;
-              src = cmake-examples-ex16-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex21d =
+                          (prev.callPackage ./pkgs/ex21d.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex21d-path; });
 
-            cmake-examples-ex17 = env.mkDerivation {
-              name = "cmake-examples-ex17"; version = cmake-examples-version;
-              src = cmake-examples-ex17-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex21e =
+                          (prev.callPackage ./pkgs/ex21e.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex21e-path; });
 
-            cmake-examples-ex18 = env.mkDerivation {
-              name = "cmake-examples-ex18"; version = cmake-examples-version;
-              src = cmake-examples-ex18-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex21f =
+                          (prev.callPackage ./pkgs/ex21f.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex21f-path; });
 
-            cmake-examples-ex19 = env.mkDerivation {
-              name = "cmake-examples-ex19"; version = cmake-examples-version;
-              src = cmake-examples-ex19-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex21g =
+                          (prev.callPackage ./pkgs/ex21g.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex21g-path; });
 
-            cmake-examples-ex20 = env.mkDerivation {
-              name = "cmake-examples-ex20"; version = cmake-examples-version;
-              src = cmake-examples-ex20-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex21h =
+                          (prev.callPackage ./pkgs/ex21h.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex21h-path; });
 
-            cmake-examples-ex21 = env.mkDerivation {
-              name = "cmake-examples-ex21"; version = cmake-examples-version;
-              src = cmake-examples-ex21-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex21i =
+                          (prev.callPackage ./pkgs/ex21i.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex21i-path; });
 
-            cmake-examples-ex21a = env.mkDerivation {
-              name = "cmake-examples-ex21a"; version = cmake-examples-version;
-              src = cmake-examples-ex21a-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
+                        cmake-examples-ex21j =
+                          (prev.callPackage ./pkgs/ex21j.nix { boost = prev.boost182; python3Packages = prev.python311Packages; }).overrideAttrs
+                            (old: { src = cmake-examples-ex21j-path; });
 
-            cmake-examples-ex21b = env.mkDerivation {
-              name = "cmake-examples-ex21b"; version = cmake-examples-version;
-              src = cmake-examples-ex21b-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
-
-            cmake-examples-ex21c = env.mkDerivation {
-              name = "cmake-examples-ex21c"; version = cmake-examples-version;
-              src = cmake-examples-ex21c-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
-
-            cmake-examples-ex21d = env.mkDerivation {
-              name = "cmake-examples-ex21d"; version = cmake-examples-version;
-              src = cmake-examples-ex21d-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
-
-            cmake-examples-ex21e = env.mkDerivation {
-              name = "cmake-examples-ex21e"; version = cmake-examples-version;
-              src = cmake-examples-ex21e-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
-
-            cmake-examples-ex21f = env.mkDerivation {
-              name = "cmake-examples-ex21f"; version = cmake-examples-version;
-              src = cmake-examples-ex21f-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
-
-            cmake-examples-ex21g = env.mkDerivation {
-              name = "cmake-examples-ex21g"; version = cmake-examples-version;
-              src = cmake-examples-ex21g-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
-
-            cmake-examples-ex21h = env.mkDerivation {
-              name = "cmake-examples-ex21h"; version = cmake-examples-version;
-              src = cmake-examples-ex21h-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
-
-            cmake-examples-ex21i = env.mkDerivation {
-              name = "cmake-examples-ex21i"; version = cmake-examples-version;
-              src = cmake-examples-ex21i-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
-
-            cmake-examples-ex21j = env.mkDerivation {
-              name = "cmake-examples-ex21j"; version = cmake-examples-version;
-              src = cmake-examples-ex21j-path;
-              doCheck = true;
-              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
-            };
-
-#            hello = pkgs.hello;
-            default = cmake-examples-ex12;
-          };
-
-          devShells = {
-            default = pkgs.mkShell.override
-              { stdenv = env; }
-
-              { packages = [ pkgs.python311Full
-                             pkgs.python311Packages.pybind11
-                             pkgs.python311Packages.coverage
-                             pkgs.python311Packages.sphinx
-
-                             # generic dev stack
-                             pkgs.llvmPackages_16.clang-unwrapped
-                             pkgs.emacs29
-                             #pkgs.mu
-                             #pkgs.emacsPackages.mu4easy
-                             pkgs.notmuch
-                             pkgs.emacsPackages.notmuch
-                             #pkgs.pixelorama
-                             pkgs.inconsolata-lgc
-                             pkgs.sphinx
-                             pkgs.ditaa
-                             pkgs.semgrep
-                             pkgs.ripgrep
-                             pkgs.git
-                             pkgs.openssh
-                             pkgs.cmake
-                             pkgs.gdb
-                             pkgs.which
-                             pkgs.man
-                             pkgs.man-pages
-                             pkgs.less
-                             pkgs.tree
-                             pkgs.nix-tree
-                             pkgs.lcov
-
-                             # xo-specific dependencies (also see cmake-examples)
-                             pkgs.catch2
-                             pkgs.libwebsockets
-                             pkgs.openssl
-                             pkgs.jsoncpp
-                             pkgs.eigen
-                             pkgs.boost182
-                             pkgs.pkg-config
-                             pkgs.zlib
-                           ];
-              };
-          };
-
-          apps = rec {
-            #xo_cmake = flake-utils.lib.mkApp { drv = xo_pkgs.xo_cmake; };
-            #indentlog = flake-utils.lib.mkApp { drv = xo_pkgs.indentlog; };
-            #refcnt = flake-utils.lib.mkApp { drv = xo_pkgs.refcnt; }
-            #subsys = flake-utils.lib.mkApp { drv = xo_pkgs.subsys; };
-
-            #default = subsys;
-            #hello = flake-utils.lib.mkApp { drv = xo_pkgs.hello; };
-            #default = hello;
-          };
-        }
-    );
+                      });
+                };
 }
