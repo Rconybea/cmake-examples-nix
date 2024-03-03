@@ -270,7 +270,7 @@
                             (old: { src = cmake-examples-ex21b-path; });
 
                         cmake-examples-ex21c =
-                          (prev.callPackage ./pkgs/ex21c.nix { boost = boost; python3Packages = prev.python311Packages; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex21c.nix extras2).overrideAttrs
                             (old: { src = cmake-examples-ex21c-path; });
 
                         cmake-examples-ex21d =
