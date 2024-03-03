@@ -17,9 +17,4 @@ stdenv.mkDerivation (finalattrs:
     };
 
     buildInputs = [ cmake pkg-config boost182 zlib ];
-
-    installPhase = ''
-      mkdir -p $out
-      echo 'This project intentionally has no install phase'
-    '';
   })
