@@ -23,28 +23,83 @@
   # instead of
   #   inputs.nixpkgs.url = "github:nixos/nixpkgs/23.05";
   inputs.flake-utils.url = "github:numtide/flake-utils";
-  inputs.cmake-examples-path = { type = "github"; owner = "Rconybea"; repo = "xo-cmake";       flake = false; ref = "ex21j" };
-  #inputs.xo-cmake-path       = { type = "github"; owner = "Rconybea"; repo = "xo-cmake";       flake = false; };
-  #inputs.indentlog-path      = { type = "github"; owner = "Rconybea"; repo = "indentlog";      flake = false; };
-  #inputs.refcnt-path         = { type = "github"; owner = "Rconybea"; repo = "refcnt";         flake = false; };
-  #inputs.subsys-path         = { type = "github"; owner = "Rconybea"; repo = "subsys";         flake = false; };
-  #inputs.reflect-path        = { type = "github"; owner = "Rconybea"; repo = "reflect";        flake = false; };
-  #inputs.randomgen-path      = { type = "github"; owner = "Rconybea"; repo = "randomgen";      flake = false; };
-  #inputs.xo-ordinaltree-path = { type = "github"; owner = "Rconybea"; repo = "xo-ordinaltree"; flake = false; };
-  #inputs.xo-pyutil-path      = { type = "github"; owner = "Rconybea"; repo = "xo-pyutil";      flake = false; };
-  #inputs.xo-pyreflect-path   = { type = "github"; owner = "Rconybea"; repo = "xo-pyreflect";   flake = false; };
-  #inputs.xo-printjson-path   = { type = "github"; owner = "Rconybea"; repo = "xo-printjson";   flake = false; };
-  #inputs.xo-pyprintjson-path = { type = "github"; owner = "Rconybea"; repo = "xo-pyprintjson"; flake = false; };
-  #inputs.xo-callback-path    = { type = "github"; owner = "Rconybea"; repo = "xo-callback";    flake = false; };
-  #inputs.xo-webutil-path     = { type = "github"; owner = "Rconybea"; repo = "xo-webutil";     flake = false; };
-  #inputs.xo-pywebutil-path   = { type = "github"; owner = "Rconybea"; repo = "xo-pywebutil";   flake = false; };
-  #inputs.xo-reactor-path     = { type = "github"; owner = "Rconybea"; repo = "xo-reactor";     flake = false; };
-  #inputs.xo-pyreactor-path   = { type = "github"; owner = "Rconybea"; repo = "xo-pyreactor";   flake = false; };
-  #inputs.xo-simulator-path   = { type = "github"; owner = "Rconybea"; repo = "xo-simulator";   flake = false; };
-  #inputs.xo-process-path     = { type = "github"; owner = "Rconybea"; repo = "xo-process";     flake = false; };
 
-  outputs = { self, nixpkgs, flake-utils,
-              cmake-examples-path
+  # branches:
+  #  ex1 ex1b ex1c
+  #  ex2 .. ex21
+  #  ex21a .. ex21j
+  #  ex22
+  #
+  inputs.cmake-examples-ex1-path   = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex1"; };
+  inputs.cmake-examples-ex1b-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex1b"; };
+  inputs.cmake-examples-ex1c-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex1c"; };
+  inputs.cmake-examples-ex2-path   = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex2"; };
+  inputs.cmake-examples-ex3-path   = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex3"; };
+  inputs.cmake-examples-ex4-path   = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex4"; };
+  inputs.cmake-examples-ex5-path   = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex5"; };
+  inputs.cmake-examples-ex6-path   = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex6"; };
+  inputs.cmake-examples-ex7-path   = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex7"; };
+  inputs.cmake-examples-ex8-path   = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex8"; };
+  inputs.cmake-examples-ex9-path   = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex9"; };
+  inputs.cmake-examples-ex10-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex10"; };
+  inputs.cmake-examples-ex11-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex11"; };
+  inputs.cmake-examples-ex12-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex12"; };
+  inputs.cmake-examples-ex13-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex13"; };
+  inputs.cmake-examples-ex14-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex14"; };
+  inputs.cmake-examples-ex15-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex15"; };
+  inputs.cmake-examples-ex16-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex16"; };
+  inputs.cmake-examples-ex17-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex17"; };
+  inputs.cmake-examples-ex18-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex18"; };
+  inputs.cmake-examples-ex19-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex19"; };
+  inputs.cmake-examples-ex20-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex20"; };
+  inputs.cmake-examples-ex21-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21"; };
+  inputs.cmake-examples-ex21a-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21a"; };
+  inputs.cmake-examples-ex21b-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21b"; };
+  inputs.cmake-examples-ex21c-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21c"; };
+  inputs.cmake-examples-ex21d-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21d"; };
+  inputs.cmake-examples-ex21e-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21e"; };
+  inputs.cmake-examples-ex21f-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21f"; };
+  inputs.cmake-examples-ex21g-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21g"; };
+  inputs.cmake-examples-ex21h-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21h"; };
+  inputs.cmake-examples-ex21i-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21i"; };
+  inputs.cmake-examples-ex21j-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21j"; };
+
+  outputs = { self,
+              nixpkgs,
+              flake-utils,
+              cmake-examples-ex1-path,
+              cmake-examples-ex1b-path,
+              cmake-examples-ex1c-path,
+              cmake-examples-ex2-path,
+              cmake-examples-ex3-path,
+              cmake-examples-ex4-path,
+              cmake-examples-ex5-path,
+              cmake-examples-ex6-path,
+              cmake-examples-ex7-path,
+              cmake-examples-ex8-path,
+              cmake-examples-ex9-path,
+              cmake-examples-ex10-path,
+              cmake-examples-ex11-path,
+              cmake-examples-ex12-path,
+              cmake-examples-ex13-path,
+              cmake-examples-ex14-path,
+              cmake-examples-ex15-path,
+              cmake-examples-ex16-path,
+              cmake-examples-ex17-path,
+              cmake-examples-ex18-path,
+              cmake-examples-ex19-path,
+              cmake-examples-ex20-path,
+              cmake-examples-ex21-path,
+              cmake-examples-ex21a-path,
+              cmake-examples-ex21b-path,
+              cmake-examples-ex21c-path,
+              cmake-examples-ex21d-path,
+              cmake-examples-ex21e-path,
+              cmake-examples-ex21f-path,
+              cmake-examples-ex21g-path,
+              cmake-examples-ex21h-path,
+              cmake-examples-ex21i-path,
+              cmake-examples-ex21j-path,
             }:
 
   flake-utils.lib.eachDefaultSystem
@@ -62,144 +117,19 @@
 
         our_pkgs = self.packages.${system};
 
-        cmake_examples_deriv = env.mkDerivation {
-          name = "cmake-examples"; version = "1.0"; src = cmake-examples-path;
-          nativeBuildInputs = [ pkgs.cmake ];
+        empty_install_phase = ''
+          mkdir -p $out
+          echo 'No install phase!'
+        '';
 
-#        xo_pkgs = self.packages.${system};
-#        xo_cmake_deriv = env.mkDerivation {
-#          name = "xo-cmake"; version = "1.0"; src = xo-cmake-path;
-#          nativeBuildInputs = [ pkgs.cmake ];
-#        };
-#        # using this in CMAKE_MODULE_PATH
-#        xo_cmake_dir = "${self.packages.${system}.xo_cmake}/share/cmake";
-#
-#        indentlog_deriv = env.mkDerivation {
-#          name = "indentlog"; version = "1.0"; src = indentlog-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 ];
-#          propagatedBuildInputs = [ ];
-#        };
-#
-#        refcnt_deriv = env.mkDerivation {
-#          name = "recnt"; version = "1.0"; src = refcnt-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 ];
-#          propagatedBuildInputs = [ xo_pkgs.indentlog ];
-#        };
-#
-#        subsys_deriv = env.mkDerivation {
-#          name = "subsys"; version = "1.0"; src = subsys-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 ];
-#          propagatedBuildInputs = [ ];
-#        };
-#
-#        randomgen_deriv = env.mkDerivation {
-#          name = "randomgen"; version = "1.0"; src = randomgen-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake ];
-#          propagatedBuildInputs = [ xo_pkgs.indentlog ];
-#        };
-#
-#        xo_ordinaltree_deriv = env.mkDerivation {
-#          name = "xo-ordinaltree"; version = "1.0"; src = xo-ordinaltree-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 xo_pkgs.randomgen ];
-#          propagatedBuildInputs = [ xo_pkgs.refcnt ];
-#        };
-#
-#        xo_pyutil_deriv = env.mkDerivation {
-#          name = "xo-pyutil"; version = "1.0"; src = xo-pyutil-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 ];
-#          # all python bindings need to build vs the same python major.minor version
-#          propagatedBuildInputs = [ pkgs.python311Full pkgs.python311Packages.pybind11 ];
-#        };
-#
-#        reflect_deriv = env.mkDerivation {
-#          name = "reflect"; version = "1.0"; src = reflect-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 ];
-#          propagatedBuildInputs = [ xo_pkgs.subsys xo_pkgs.refcnt ];
-#        };
-#
-#        xo_pyreflect_deriv = env.mkDerivation {
-#          name = "xo-pyreflect"; version = "1.0"; src = xo-pyreflect-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2
-#                                xo_pkgs.refcnt xo_pkgs.xo_pyutil xo_pkgs.reflect ];
-#          propagatedBuildInputs = [ ];
-#        };
-#
-#        xo_printjson_deriv = env.mkDerivation {
-#          name = "xo-printjson"; version = "1.0"; src = xo-printjson-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 ];
-#          propagatedBuildInputs = [ xo_pkgs.reflect ];
-#        };
-#
-#        xo_pyprintjson_deriv = env.mkDerivation {
-#          name = "xo-pyprintjson"; version = "1.0"; src = xo-pyprintjson-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 xo_pkgs.xo_pyutil ];
-#          propagatedBuildInputs = [ xo_pkgs.xo_printjson xo_pkgs.xo_pyreflect ];
-#        };
-#
-#        xo_callback_deriv = env.mkDerivation {
-#          name = "xo-callback"; version = "1.0"; src = xo-callback-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 ];
-#          propagatedBuildInputs = [ xo_pkgs.reflect ];
-#        };
-#
-#        xo_webutil_deriv = env.mkDerivation {
-#          name = "xo-webutil"; version = "1.0"; src = xo-webutil-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 ];
-#          propagatedBuildInputs = [ xo_pkgs.reflect xo_pkgs.xo_callback ];
-#        };
-#
-#        xo_pywebutil_deriv = env.mkDerivation {
-#          name = "xo-pywebutil"; version = "1.0"; src = xo-pywebutil-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 xo_pkgs.xo_pyutil ];
-#          propagatedBuildInputs = [ xo_pkgs.xo_webutil ];
-#        };
-#
-#        xo_reactor_deriv = env.mkDerivation {
-#          name = "xo-reactor"; version = "1.0"; src = xo-reactor-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 xo_pkgs.randomgen ];
-#          propagatedBuildInputs = [ xo_pkgs.xo_webutil
-#                                    xo_pkgs.xo_printjson
-#                                    xo_pkgs.xo_ordinaltree ];
-#        };
-#
-#        xo_pyreactor_deriv = env.mkDerivation {
-#          name = "xo-pyreactor"; version = "1.0"; src = xo-pyreactor-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 ];
-#          propagatedBuildInputs = [ xo_pkgs.xo_reactor
-#                                    xo_pkgs.xo_pyutil
-#                                    xo_pkgs.xo_pyreflect
-#                                    xo_pkgs.xo_pyprintjson ];
-#        };
-#
-#        xo_simulator_deriv = env.mkDerivation {
-#          name = "xo-simulator"; version = "1.0"; src = xo-simulator-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 ];
-#          propagatedBuildInputs = [ xo_pkgs.xo_reactor ];
-#        };
-#
-#        xo_process_deriv = env.mkDerivation {
-#          name = "xo-process"; version = "1.0"; src = xo-process-path;
-#          cmakeFlags = ["-DCMAKE_MODULE_PATH=${xo_cmake_dir}"];
-#          nativeBuildInputs = [ pkgs.cmake pkgs.catch2 ];
-#          propagatedBuildInputs = [ xo_pkgs.xo_simulator
-#                                    xo_pkgs.randomgen ];
-#        };
+        cmake-examples-version = "1.0";
+
+        cmake-examples-ex5-deriv = env.mkDerivation {
+          name = "cmake-examples-ex5"; version = cmake-examples-version;
+          src = cmake-examples-ex5-path;
+          installPhase = empty_install_phase;
+          nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
+        };
 
       in
         {
@@ -207,28 +137,246 @@
             # member packages.foo appears as xo_pkgs.foo
             # (xo_pkgs adds ${system} qualifier)
 
-            cmake_examples = cmake_examples_deriv;
-#            xo_cmake = xo_cmake_deriv;
-#            indentlog = indentlog_deriv;
-#            refcnt = refcnt_deriv;
-#            subsys = subsys_deriv;
-#            randomgen = randomgen_deriv;
-#            xo_ordinaltree = xo_ordinaltree_deriv;
-#            reflect = reflect_deriv;
-#            xo_pyutil = xo_pyutil_deriv;
-#            xo_pyreflect = xo_pyreflect_deriv;
-#            xo_printjson = xo_printjson_deriv;
-#            xo_pyprintjson = xo_pyprintjson_deriv;
-#            xo_callback = xo_callback_deriv;
-#            xo_webutil = xo_webutil_deriv;
-#            xo_pywebutil = xo_pywebutil_deriv;
-#            xo_reactor = xo_reactor_deriv;
-#            xo_pyreactor = xo_pyreactor_deriv;
-#            xo_simulator = xo_simulator_deriv;
-#            xo_process = xo_process_deriv;
+            cmake-examples-ex1 = pkgs.callPackage ./pkgs/ex1.nix { cmake-examples-ex1-path = cmake-examples-ex1-path; };
+
+#            cmake-examples-ex1 = env.mkDerivation {
+#              name = "cmake-examples-ex1"; version = cmake-examples-version;
+#              src = cmake-examples-ex1-path;
+#              installPhase = empty_install_phase;
+#              nativeBuildInputs = [ pkgs.cmake ];
+#            };
+
+            # reminder: can't chain deriv deps here via propagatedBuildInputs etc.
+            #           That would be suitable if ex{n+1} depended on ex{n} _output_
+
+            cmake-examples-ex1b = pkgs.callPackage ./pkgs/ex1b.nix { cmake-examples-ex1b-path = cmake-examples-ex1b-path; };
+
+#            cmake-examples-ex1b = env.mkDerivation {
+#              name = "cmake-examples-ex1b"; version = cmake-examples-version;
+#              src = cmake-examples-ex1b-path;
+#              installPhase = empty_install_phase;
+#              nativeBuildInputs = [ pkgs.cmake ];
+#            };
+
+            cmake-examples-ex1c = env.mkDerivation {
+              name = "cmake-examples-ex1c"; version = cmake-examples-version;
+              src = cmake-examples-ex1c-path;
+              installPhase = empty_install_phase;
+              nativeBuildInputs = [ pkgs.cmake ];   # don't do this -- breaks cross-compilation
+            };
+
+            cmake-examples-ex2 = env.mkDerivation {
+              name = "cmake-examples-ex2"; version = cmake-examples-version;
+              src = cmake-examples-ex2-path;
+              installPhase = empty_install_phase;
+              nativeBuildInputs = [ pkgs.cmake ];
+            };
+
+            # pkgs.boost182 current asof feb2024
+            cmake-examples-ex3 = env.mkDerivation {
+              name = "cmake-examples-ex3"; version = cmake-examples-version;
+              src = cmake-examples-ex3-path;
+              installPhase = empty_install_phase;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 ];
+            };
+
+            cmake-examples-ex4 = env.mkDerivation {
+              name = "cmake-examples-ex4"; version = cmake-examples-version;
+              src = cmake-examples-ex4-path;
+              installPhase = empty_install_phase;
+              propagatedBuildInputs = [ our_pkgs.cmake-examples-ex3 ];
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex5 = env.mkDerivation {
+              name = "cmake-examples-ex5"; version = cmake-examples-version;
+              src = cmake-examples-ex5-path;
+              installPhase = empty_install_phase;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
+            };
+
+            # first example with non-trivial install step -> non-trivial result/ dir after building
+            #
+            cmake-examples-ex6 = env.mkDerivation {
+              name = "cmake-examples-ex6"; version = cmake-examples-version;
+              src = cmake-examples-ex6-path;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex7 = env.mkDerivation {
+              name = "cmake-examples-ex7"; version = cmake-examples-version;
+              src = cmake-examples-ex7-path;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex8 = env.mkDerivation {
+              name = "cmake-examples-ex8"; version = cmake-examples-version;
+              src = cmake-examples-ex8-path;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex9 = env.mkDerivation {
+              name = "cmake-examples-ex9"; version = cmake-examples-version;
+              src = cmake-examples-ex9-path;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex10 = env.mkDerivation {
+              name = "cmake-examples-ex10"; version = cmake-examples-version;
+              src = cmake-examples-ex10-path;
+              doCheck = true;   # run unit tests starting with cmake-examples-ex10
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex11 = env.mkDerivation {
+              name = "cmake-examples-ex11"; version = cmake-examples-version;
+              src = cmake-examples-ex11-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex12 = env.mkDerivation {
+              name = "cmake-examples-ex12"; version = cmake-examples-version;
+              src = cmake-examples-ex12-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex13 = env.mkDerivation {
+              name = "cmake-examples-ex13"; version = cmake-examples-version;
+              src = cmake-examples-ex13-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex14 = env.mkDerivation {
+              name = "cmake-examples-ex14"; version = cmake-examples-version;
+              src = cmake-examples-ex14-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex15 = env.mkDerivation {
+              name = "cmake-examples-ex15"; version = cmake-examples-version;
+              src = cmake-examples-ex15-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex16 = env.mkDerivation {
+              name = "cmake-examples-ex16"; version = cmake-examples-version;
+              src = cmake-examples-ex16-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex17 = env.mkDerivation {
+              name = "cmake-examples-ex17"; version = cmake-examples-version;
+              src = cmake-examples-ex17-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex18 = env.mkDerivation {
+              name = "cmake-examples-ex18"; version = cmake-examples-version;
+              src = cmake-examples-ex18-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex19 = env.mkDerivation {
+              name = "cmake-examples-ex19"; version = cmake-examples-version;
+              src = cmake-examples-ex19-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex20 = env.mkDerivation {
+              name = "cmake-examples-ex20"; version = cmake-examples-version;
+              src = cmake-examples-ex20-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex21 = env.mkDerivation {
+              name = "cmake-examples-ex21"; version = cmake-examples-version;
+              src = cmake-examples-ex21-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex21a = env.mkDerivation {
+              name = "cmake-examples-ex21a"; version = cmake-examples-version;
+              src = cmake-examples-ex21a-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex21b = env.mkDerivation {
+              name = "cmake-examples-ex21b"; version = cmake-examples-version;
+              src = cmake-examples-ex21b-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex21c = env.mkDerivation {
+              name = "cmake-examples-ex21c"; version = cmake-examples-version;
+              src = cmake-examples-ex21c-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex21d = env.mkDerivation {
+              name = "cmake-examples-ex21d"; version = cmake-examples-version;
+              src = cmake-examples-ex21d-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex21e = env.mkDerivation {
+              name = "cmake-examples-ex21e"; version = cmake-examples-version;
+              src = cmake-examples-ex21e-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex21f = env.mkDerivation {
+              name = "cmake-examples-ex21f"; version = cmake-examples-version;
+              src = cmake-examples-ex21f-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex21g = env.mkDerivation {
+              name = "cmake-examples-ex21g"; version = cmake-examples-version;
+              src = cmake-examples-ex21g-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex21h = env.mkDerivation {
+              name = "cmake-examples-ex21h"; version = cmake-examples-version;
+              src = cmake-examples-ex21h-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex21i = env.mkDerivation {
+              name = "cmake-examples-ex21i"; version = cmake-examples-version;
+              src = cmake-examples-ex21i-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
+
+            cmake-examples-ex21j = env.mkDerivation {
+              name = "cmake-examples-ex21j"; version = cmake-examples-version;
+              src = cmake-examples-ex21j-path;
+              doCheck = true;
+              nativeBuildInputs = [ pkgs.python311Packages.pybind11 pkgs.cmake pkgs.pkg-config pkgs.catch2 pkgs.boost182 pkgs.zlib ];
+            };
 
 #            hello = pkgs.hello;
-            default = cmake_examples;
+            default = cmake-examples-ex12;
           };
 
           devShells = {
