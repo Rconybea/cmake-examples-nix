@@ -16,5 +16,8 @@ stdenv.mkDerivation (finalattrs:
       rev = "hashofsomething";
     };
 
-    buildInputs = [ cmake pkg-config boost182 zlib ];
+    # run unit tests
+    doCheck = true;
+
+    buildInputs = [ cmake pkg-config catch2 boost182 zlib ];
   })
