@@ -1,6 +1,6 @@
 {
   # dependencies
-  stdenv, cmake, catch2, pkg-config, boost, zlib, # ... other deps here
+  stdenv, cmake, catch2, pkg-config, python3Packages, boost, zlib, # ... other deps here
 
   # args
   #   someconfigurationoption ? false
@@ -8,7 +8,7 @@
 
 stdenv.mkDerivation (finalattrs:
   {
-    name = "cmake-examples-ex15";
+    name = "cmake-examples-ex21c";
 
     # note: ../flake.nix will override this
     src = fetchGit {
@@ -19,5 +19,5 @@ stdenv.mkDerivation (finalattrs:
     # run unit tests
     doCheck = true;
 
-    buildInputs = [ cmake pkg-config catch2 boost zlib ];
+    buildInputs = [ cmake pkg-config python3Packages.pybind11 catch2 boost zlib ];
   })
