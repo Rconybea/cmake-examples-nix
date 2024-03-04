@@ -31,7 +31,6 @@
   #  ex22
   #
 
-
   inputs.cmake-examples-ex1-path   = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex1"; };
   inputs.cmake-examples-ex1b-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex1b"; };
   inputs.cmake-examples-ex1c-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref =  "ex1c"; };
@@ -119,6 +118,7 @@
                       #   cmake-examples-$example-path
                       # above for source code
 
+                      packages.cmake-examples-ex1   = appliedOverlay.cmake-examples-ex1;
                       packages.cmake-examples-ex1b  = appliedOverlay.cmake-examples-ex1b;
                       packages.cmake-examples-ex1c  = appliedOverlay.cmake-examples-ex1c;
                       packages.cmake-examples-ex2   = appliedOverlay.cmake-examples-ex2;
@@ -159,10 +159,15 @@
                   #
                   overlays.default = final: prev: (
                     let
+                      # can use
+                      #  $ nix-env -qaP | grep \.boost            # show known boost versions
+                      #  $ nix-env -qaP | grep \.python.*Packages # show known python versions
+
                       boost = prev.boost182;
                       python3Packages = prev.python311Packages;
                       pybind11 = python3Packages.pybind11;
 
+                      extras1 = { boost = boost; };
                       extras2 = { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; };
 
                     in
@@ -172,6 +177,10 @@
                         # in the below:
                         # the .overrideAttrs() call applies to derivation-inputs,  i.e. the attribute set passed to stdenv.mkDerivation()
                         #
+
+                        cmake-examples-ex1 =
+                          (prev.callPackage ./pkgs/ex1.nix {}).overrideAttrs
+                            (old: { src = cmake-examples-ex1-path; });
 
                         cmake-examples-ex1b =
                           (prev.callPackage ./pkgs/ex1b.nix {}).overrideAttrs
@@ -185,61 +194,65 @@
                           (prev.callPackage ./pkgs/ex2.nix {}).overrideAttrs
                             (old: { src = cmake-examples-ex2-path; });
 
+                        # extras1 starting with ex3 -- adds boost
+
                         cmake-examples-ex3 =
-                          (prev.callPackage ./pkgs/ex3.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex3.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex3-path; });
 
                         cmake-examples-ex4 =
-                          (prev.callPackage ./pkgs/ex4.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex4.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex4-path; });
 
                         cmake-examples-ex5 =
-                          (prev.callPackage ./pkgs/ex5.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex5.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex5-path; });
 
                         cmake-examples-ex6 =
-                          (prev.callPackage ./pkgs/ex6.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex6.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex6-path; });
 
                         cmake-examples-ex7 =
-                          (prev.callPackage ./pkgs/ex7.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex7.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex7-path; });
 
                         cmake-examples-ex8 =
-                          (prev.callPackage ./pkgs/ex8.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex8.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex8-path; });
 
                         cmake-examples-ex9 =
-                          (prev.callPackage ./pkgs/ex9.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex9.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex9-path; });
 
                         cmake-examples-ex10 =
-                          (prev.callPackage ./pkgs/ex10.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex10.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex10-path; });
 
                         cmake-examples-ex11 =
-                          (prev.callPackage ./pkgs/ex11.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex11.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex11-path; });
 
                         cmake-examples-ex12 =
-                          (prev.callPackage ./pkgs/ex12.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex12.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex12-path; });
 
                         cmake-examples-ex13 =
-                          (prev.callPackage ./pkgs/ex13.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex13.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex13-path; });
 
                         cmake-examples-ex14 =
-                          (prev.callPackage ./pkgs/ex14.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex14.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex14-path; });
 
                         cmake-examples-ex15 =
-                          (prev.callPackage ./pkgs/ex15.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex15.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex15-path; });
 
                         cmake-examples-ex16 =
-                          (prev.callPackage ./pkgs/ex16.nix { boost = boost; }).overrideAttrs
+                          (prev.callPackage ./pkgs/ex16.nix extras1).overrideAttrs
                             (old: { src = cmake-examples-ex16-path; });
+
+                        # extras2 starting with ex17 -- adds pybind11
 
                         cmake-examples-ex17 =
                           (prev.callPackage ./pkgs/ex17.nix extras2).overrideAttrs
