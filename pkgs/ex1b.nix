@@ -1,6 +1,6 @@
 {
   # dependencies
-  stdenv, cmake, # ... other deps here
+  stdenv, cmake,  # ... other deps here
 
   # args
 
@@ -11,16 +11,18 @@
   #
   #   see [[../flake.nix]]
   #
-  cmake-examples-ex1-path
+#  cmake-examples-ex1b-path,
 
   # someconfigurationoption ? false
 } :
 
 stdenv.mkDerivation (finalattrs:
   {
-    name = "cmake-examples-ex1";
+    name = "cmake-examples-ex1b";
 
-    src = cmake-examples-ex1-path;
+    src = fetchGit {};
+
+#    src = cmake-examples-ex1b-path;
 
 #    src = (fetchGit {
 #      url = "https://github.com/rconybea/cmake-examples";

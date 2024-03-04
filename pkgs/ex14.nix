@@ -1,6 +1,6 @@
 {
   # dependencies
-  stdenv, cmake, catch2, pkg-config, boost182, zlib, # ... other deps here
+  stdenv, cmake, catch2, pkg-config, boost, zlib, # ... other deps here
 
   # args
   #   someconfigurationoption ? false
@@ -19,5 +19,5 @@ stdenv.mkDerivation (finalattrs:
     # run unit tests
     doCheck = true;
 
-    buildInputs = [ cmake pkg-config catch2 boost182 zlib ];
+    buildInputs = [ cmake pkg-config catch2 boost zlib ];
   })

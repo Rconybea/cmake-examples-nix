@@ -1,6 +1,6 @@
 {
   # dependencies
-  stdenv, cmake, pkg-config, boost182, zlib, # ... other deps here
+  stdenv, cmake, pkg-config, boost, zlib, # ... other deps here
 
   # args
   #   someconfigurationoption ? false
@@ -16,7 +16,7 @@ stdenv.mkDerivation (finalattrs:
       rev = "hashofsomething";
     };
 
-    buildInputs = [ cmake pkg-config boost182 zlib ];
+    buildInputs = [ cmake pkg-config boost zlib ];
 
     installPhase = ''
       mkdir -p $out

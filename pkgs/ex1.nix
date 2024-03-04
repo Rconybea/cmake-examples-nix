@@ -1,20 +1,31 @@
 {
   # dependencies
-  stdenv, fetchgit, cmake # ... other deps here
+  stdenv, cmake, # ... other deps here
 
   # args
+
+  #   attrset for fetching source code.
+  #    { type, owner, repo, ref }
+  #
+  #   e.g. type="github", owner="rconybea", repo="cmake-examples", ref="ex1b"
+  #
+  #   see [[../flake.nix]]
+  #
+  #cmake-examples-ex1-path
 
   # someconfigurationoption ? false
 } :
 
 stdenv.mkDerivation (finalattrs:
   {
-    name = "cmake-examples-ex1";
+    name = "cmake-examples-ex1b";
+
+#    src = cmake-examples-ex1-path;
 
     src = (fetchGit {
       url = "https://github.com/rconybea/cmake-examples";
-      ref = "ex1";
-      rev = "c0472c9d7e4d2c53bfb977d3182380832fe96645";
+      #ref = "ex1";
+      #rev = "c0472c9d7e4d2c53bfb977d3182380832fe96645";
     });
 
     buildInputs = [ cmake ];
