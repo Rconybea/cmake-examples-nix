@@ -20,5 +20,5 @@ stdenv.mkDerivation (finalattrs:
     # run unit tests
     doCheck = true;
 
-    buildInputs = [ cmake pkg-config python3Packages.pybind11 catch2 boost zlib ];
+    buildInputs = [ cmake pkg-config pybind11 catch2 boost zlib ];
   })
