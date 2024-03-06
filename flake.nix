@@ -66,6 +66,7 @@
   inputs.cmake-examples-ex21j-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21j"; };
   inputs.cmake-examples-ex22-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex22"; };
   inputs.cmake-examples-ex22a-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex22a"; };
+  inputs.cmake-examples-ex23-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex23"; };
 
   outputs = { self,
               nixpkgs,
@@ -105,6 +106,7 @@
               cmake-examples-ex21j-path,
               cmake-examples-ex22-path,
               cmake-examples-ex22a-path,
+              cmake-examples-ex23-path,
             }:
 
               let
@@ -157,6 +159,7 @@
                       packages.cmake-examples-ex21j = appliedOverlay.cmake-examples-ex21j;
                       packages.cmake-examples-ex22  = appliedOverlay.cmake-examples-ex22;
                       packages.cmake-examples-ex22a = appliedOverlay.cmake-examples-ex22a;
+                      packages.cmake-examples-ex23  = appliedOverlay.cmake-examples-ex23;
                     };
               in
                 flake-utils.lib.eachDefaultSystem out // {
@@ -174,11 +177,13 @@
                       doxygen = prev.doxygen;
 
                       pybind11 = python3Packages.pybind11;
+                      breathe = python3Packages.breathe;
                       #sphinx = python3Packages.sphinx;
 
                       extras1 = { boost = boost; };
                       extras2 = { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; };
                       extras3 = { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; doxygen = doxygen; };
+                      extras4 = { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; doxygen = doxygen; breathe = breathe; };
                     in
                       {
                         #cmake-examples-ex1b = prev.cmake-examples-ex1b.overrideAttrs (prev: {src = cmake-examples-ex1b-path; });
@@ -332,6 +337,11 @@
                         cmake-examples-ex22a =
                           (prev.callPackage ./pkgs/ex22a.nix extras3).overrideAttrs
                             (old: { src = cmake-examples-ex22a-path; });
+
+                        cmake-examples-ex23 =
+                          (prev.callPackage ./pkgs/ex23.nix extras3).overrideAttrs
+                            (old: { src = cmake-examples-ex23-path; });
+
 
                       });
                 };
