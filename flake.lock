@@ -1,0 +1,650 @@
+{
+  "nodes": {
+    "cmake-examples-ex1-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709324368,
+        "narHash": "sha256-dUJXBR2jTPhKtwJxSjNazrYFdQsgCASIcc6iXM4yQ9Q=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "c0472c9d7e4d2c53bfb977d3182380832fe96645",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex1",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex10-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316945,
+        "narHash": "sha256-MX5ZZboQe4e7FIFj6bM1zg+jOQqSebo/FSzD3N03Xn4=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "f2426685d3798f39015027d916db408c4f177b36",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex10",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex11-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316959,
+        "narHash": "sha256-329n0CNDSH4qDas5pmmT8Rl9fAsdLfaVPYeugDrZ0dI=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "c5ffd60655edc7f98ce9f7bed74a6a79e67adbc1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex11",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex12-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316964,
+        "narHash": "sha256-kNeHPocHa98aAN5NEh187BiOjkh1wMvYa/qFmWaMKwk=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "5917b5f5c95653baa35c865a84bcac5e29ff6815",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex12",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex13-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709322636,
+        "narHash": "sha256-mdTeazFvQzcpQwDeejlbQQL5qU9HElI1BpUXAWKEvWE=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "8cdb680a7ed05b968789bda990fa047ac8ab9e64",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex13",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex14-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709322663,
+        "narHash": "sha256-D0bfvDo+VFokjtLyshpZ1zHu7TNp4C7E/oW0j2AtYLE=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "b182095bbe246c930c5fbcfc9057ae7520ab3544",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex14",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex15-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709322668,
+        "narHash": "sha256-tAx8inVuSPePnabOOqKaMA9nbH9WXPF9dGES60GI9PM=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "46f127988fb06aeb552e50af6b4dc5318ccb6651",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex15",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex16-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709322673,
+        "narHash": "sha256-HAu138JWWwtVCfCNP67sds2yoEOfMQLjZVZcruUV9qI=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "b8d6496081568697c59f18894fe74b6ff3d7d67d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex16",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex17-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709333954,
+        "narHash": "sha256-aX4oi4G1xLuLnbv3zMa1y/kNOk5Q2sIp53oWoQRn9lk=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "86c0be0ac3df6aa94f1663439e251dbeacc0dc0f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex17",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex18-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709334519,
+        "narHash": "sha256-K6LUGTIDFNEMwQyb717iDG2A2kYGW+ZrJ9Mo45YFU4Q=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "4ba2745ca5b4ddbc33736ec900b907d975a8662f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex18",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex19-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709334696,
+        "narHash": "sha256-bVauxooe9v0UKxEE6grvnZI+CntkmiVJ5t29pbqLdEo=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "9e836533dafcc6c625b9c4aee5589f1266bde016",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex19",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex1b-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316667,
+        "narHash": "sha256-tHn/sFwobYJJQ8rK2F0tZr+zO0LPCxUl7zCygm9krAA=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "1600d621c08db4828e0bb723b810e3bf8e947dae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex1b",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex1c-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316783,
+        "narHash": "sha256-ldqjUN7kX326rfG2v4lkknoKlxvx7dpLzHL34eSPoEc=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "18cb2755277e443b96a3d532b86bd679bd537b44",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex1c",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex2-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316854,
+        "narHash": "sha256-mUUCswReZVAVEVO7FOoSA72Ki0cLok0jOH+mBrgsia0=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "58e9e8ec7dbb1aa3a5381d61c47dc2fb273248b5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex2",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex20-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709335663,
+        "narHash": "sha256-AZGrDh+78cgRTg9yVB2qoWWM9J3tyJVf6yGMzye0wv0=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "9886fae5d010c90364c70470555a92030dc642e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex20",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex21-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709335663,
+        "narHash": "sha256-AZGrDh+78cgRTg9yVB2qoWWM9J3tyJVf6yGMzye0wv0=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "9886fae5d010c90364c70470555a92030dc642e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex21",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex21a-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709335959,
+        "narHash": "sha256-ulXVrNoW+PM+3CCXTY7gktWlSEycD99OiDeWezr0nOQ=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "af843319b4c031b49ea66e43954100cdac8e29e3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex21a",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex21b-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709336108,
+        "narHash": "sha256-BjUMqWNkR3+GY/Eav73NJMqIS5bRGm4Cm4Zk7wB1nUw=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "f26fab9dc4b4439a8af46b239112801d6dc981e7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex21b",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex21c-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709336210,
+        "narHash": "sha256-9Hew7Tq3drONACj6rtFiXvHg6W5/4HhXS1SaxfYWukA=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "ffe34de8e2665ef1f2c816f623049f8a50dbaf52",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex21c",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex21d-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709336218,
+        "narHash": "sha256-P5MZFreNBVUC1nK2yxixcKHOMflP2ejjbtlnlMZCivA=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "48ea4b2bb8e47811fcc9fc5af7b6f20956ede947",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex21d",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex21e-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709336223,
+        "narHash": "sha256-8ChrY455XCMhk9Y/ZkPmpfCYexgNYOnQhk3CxWxDaGU=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "778d3f16be20b1f04979c136172fa7f6bbe7c791",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex21e",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex21f-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709336228,
+        "narHash": "sha256-1UuoigHyCuLaW6WJXv3q88l4esAvDJA+9ieXlKyWrPE=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "78f64e19b4ca3b058fdf0d1371cb2d70e46eaeaa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex21f",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex21g-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709336233,
+        "narHash": "sha256-aCPm4Bq3lk5StVlvwxIULSqB43Ql5dkCAYJ7v4lbT9w=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "664180229938c22a5ff061b9bff9c30a13d62900",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex21g",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex21h-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709336237,
+        "narHash": "sha256-vhQi33Hiwvv/y6LanH5hxyTU+HZyh6UcKswCQohcfWk=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "3672e64bdb985f2b748d9b3bf50eb63aa571cdb1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex21h",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex21i-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709336242,
+        "narHash": "sha256-f1xnwNp5GVWKF1vP0wzdR8V3mIoJAjtE0UTDURCNODo=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "da22163cffbe55dc2de492385086f7f5f4e515da",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex21i",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex21j-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709336246,
+        "narHash": "sha256-H44Vm4utXKWaTwyAY1K1sDkvBcqSfYyoSMtfA8tf5+0=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "3a5a45eb260199c6f663a9c804b80619c48ca440",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex21j",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex3-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316871,
+        "narHash": "sha256-ffbt+Q1hVBMWqcB2T1emPYds+skVcyJE8iBiA+PGvZU=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "23eab867f6cc6ed7c80d90b3606bb76deb02a911",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex3",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex4-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316894,
+        "narHash": "sha256-O5Q9XdwCSAMo+KHdjR9DLfMBjThVRx0VktyvfUndQs0=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "9f657a68127b785d245e52defa100894e4733170",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex4",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex5-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316911,
+        "narHash": "sha256-c4uCQzmIpOVrikNtYcwh/VfPEbNlXR9epgiLmhVL3jA=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "00ac7948f0773905e3c4c24edd309cab157c5ae8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex5",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex6-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316918,
+        "narHash": "sha256-97aIN6Xu4lV54tBNFTTZvcxOctbg9bUOAcDAY+11LBc=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "f4018d073299155af8d2324bf0c10e4cee715a89",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex6",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex7-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316925,
+        "narHash": "sha256-Vsovuc1SnZ48rBQkVqTOD6XdiGjQAmJjBo7dLhjzW/o=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "20b7a3a6a840e9ff232e659c1b24ef97e8552cb2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex7",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex8-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316931,
+        "narHash": "sha256-YjLzCVeppASr+lZrYK6W2XKjcX1/5zyXPChNv0dbdYI=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "41121a6f31060d6b132b375262861109d092e271",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex8",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex9-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709316939,
+        "narHash": "sha256-JaOHhxAhvhw/ZtHYg9eeKfKOBpjrJlkxACeGTyLMooo=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "7146f89a4e0ad9ee5f2b04b266732af174868afa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex9",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1709126324,
+        "narHash": "sha256-q6EQdSeUZOG26WelxqkmR7kArjgWCdw5sfJVHPH/7j8=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "d465f4819400de7c8d874d50b982301f28a84605",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "narHash": "sha256-mBXQ65IrCJbNgTrj0+6xdXpD9/U31AWPKdwGlOufhtI=",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/4dd376f7943c64b522224a548d9cab5627b4d9d6.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/4dd376f7943c64b522224a548d9cab5627b4d9d6.tar.gz"
+      }
+    },
+    "root": {
+      "inputs": {
+        "cmake-examples-ex1-path": "cmake-examples-ex1-path",
+        "cmake-examples-ex10-path": "cmake-examples-ex10-path",
+        "cmake-examples-ex11-path": "cmake-examples-ex11-path",
+        "cmake-examples-ex12-path": "cmake-examples-ex12-path",
+        "cmake-examples-ex13-path": "cmake-examples-ex13-path",
+        "cmake-examples-ex14-path": "cmake-examples-ex14-path",
+        "cmake-examples-ex15-path": "cmake-examples-ex15-path",
+        "cmake-examples-ex16-path": "cmake-examples-ex16-path",
+        "cmake-examples-ex17-path": "cmake-examples-ex17-path",
+        "cmake-examples-ex18-path": "cmake-examples-ex18-path",
+        "cmake-examples-ex19-path": "cmake-examples-ex19-path",
+        "cmake-examples-ex1b-path": "cmake-examples-ex1b-path",
+        "cmake-examples-ex1c-path": "cmake-examples-ex1c-path",
+        "cmake-examples-ex2-path": "cmake-examples-ex2-path",
+        "cmake-examples-ex20-path": "cmake-examples-ex20-path",
+        "cmake-examples-ex21-path": "cmake-examples-ex21-path",
+        "cmake-examples-ex21a-path": "cmake-examples-ex21a-path",
+        "cmake-examples-ex21b-path": "cmake-examples-ex21b-path",
+        "cmake-examples-ex21c-path": "cmake-examples-ex21c-path",
+        "cmake-examples-ex21d-path": "cmake-examples-ex21d-path",
+        "cmake-examples-ex21e-path": "cmake-examples-ex21e-path",
+        "cmake-examples-ex21f-path": "cmake-examples-ex21f-path",
+        "cmake-examples-ex21g-path": "cmake-examples-ex21g-path",
+        "cmake-examples-ex21h-path": "cmake-examples-ex21h-path",
+        "cmake-examples-ex21i-path": "cmake-examples-ex21i-path",
+        "cmake-examples-ex21j-path": "cmake-examples-ex21j-path",
+        "cmake-examples-ex3-path": "cmake-examples-ex3-path",
+        "cmake-examples-ex4-path": "cmake-examples-ex4-path",
+        "cmake-examples-ex5-path": "cmake-examples-ex5-path",
+        "cmake-examples-ex6-path": "cmake-examples-ex6-path",
+        "cmake-examples-ex7-path": "cmake-examples-ex7-path",
+        "cmake-examples-ex8-path": "cmake-examples-ex8-path",
+        "cmake-examples-ex9-path": "cmake-examples-ex9-path",
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

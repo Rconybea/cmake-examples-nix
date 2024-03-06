@@ -64,6 +64,8 @@
   inputs.cmake-examples-ex21h-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21h"; };
   inputs.cmake-examples-ex21i-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21i"; };
   inputs.cmake-examples-ex21j-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex21j"; };
+  inputs.cmake-examples-ex22-path  = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex22"; };
+  inputs.cmake-examples-ex22a-path = { type = "github"; owner = "Rconybea"; repo = "cmake-examples";  flake = false; ref = "ex22a"; };
 
   outputs = { self,
               nixpkgs,
@@ -101,6 +103,8 @@
               cmake-examples-ex21h-path,
               cmake-examples-ex21i-path,
               cmake-examples-ex21j-path,
+              cmake-examples-ex22-path,
+              cmake-examples-ex22a-path,
             }:
 
               let
@@ -151,6 +155,8 @@
                       packages.cmake-examples-ex21h = appliedOverlay.cmake-examples-ex21h;
                       packages.cmake-examples-ex21i = appliedOverlay.cmake-examples-ex21i;
                       packages.cmake-examples-ex21j = appliedOverlay.cmake-examples-ex21j;
+                      packages.cmake-examples-ex22  = appliedOverlay.cmake-examples-ex22;
+                      packages.cmake-examples-ex22a = appliedOverlay.cmake-examples-ex22a;
                     };
               in
                 flake-utils.lib.eachDefaultSystem out // {
@@ -165,11 +171,14 @@
 
                       boost = prev.boost182;
                       python3Packages = prev.python311Packages;
+                      doxygen = prev.doxygen;
+
                       pybind11 = python3Packages.pybind11;
+                      #sphinx = python3Packages.sphinx;
 
                       extras1 = { boost = boost; };
                       extras2 = { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; };
-
+                      extras3 = { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; doxygen = doxygen; };
                     in
                       {
                         #cmake-examples-ex1b = prev.cmake-examples-ex1b.overrideAttrs (prev: {src = cmake-examples-ex1b-path; });
@@ -313,6 +322,16 @@
                         cmake-examples-ex21j =
                           (prev.callPackage ./pkgs/ex21j.nix extras2).overrideAttrs
                             (old: { src = cmake-examples-ex21j-path; });
+
+                        # extras3 starting with ex22 -- adds doxygen
+
+                        cmake-examples-ex22 =
+                          (prev.callPackage ./pkgs/ex22.nix extras3).overrideAttrs
+                            (old: { src = cmake-examples-ex22-path; });
+
+                        cmake-examples-ex22a =
+                          (prev.callPackage ./pkgs/ex22a.nix extras3).overrideAttrs
+                            (old: { src = cmake-examples-ex22a-path; });
 
                       });
                 };
