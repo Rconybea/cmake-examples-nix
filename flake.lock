@@ -442,6 +442,57 @@
         "type": "github"
       }
     },
+    "cmake-examples-ex22-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709694033,
+        "narHash": "sha256-9XsNJSqHtqEvRmhl6f4oP/qo02RIR7JKp7jsKizwUPE=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "6fc209fb5ed3070d5ea9d79d798d605f45213d31",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex22",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex22a-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709694100,
+        "narHash": "sha256-PowtXucNBIkRoV6vkd6KAf5nokIwVwIg2YQ98Tj3vPA=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "256547c872703c003859f97fef6fe004f631ff01",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex22a",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
+    "cmake-examples-ex23-path": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709694100,
+        "narHash": "sha256-PowtXucNBIkRoV6vkd6KAf5nokIwVwIg2YQ98Tj3vPA=",
+        "owner": "Rconybea",
+        "repo": "cmake-examples",
+        "rev": "256547c872703c003859f97fef6fe004f631ff01",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rconybea",
+        "ref": "ex23",
+        "repo": "cmake-examples",
+        "type": "github"
+      }
+    },
     "cmake-examples-ex3-path": {
       "flake": false,
       "locked": {
@@ -618,6 +669,9 @@
         "cmake-examples-ex21h-path": "cmake-examples-ex21h-path",
         "cmake-examples-ex21i-path": "cmake-examples-ex21i-path",
         "cmake-examples-ex21j-path": "cmake-examples-ex21j-path",
+        "cmake-examples-ex22-path": "cmake-examples-ex22-path",
+        "cmake-examples-ex22a-path": "cmake-examples-ex22a-path",
+        "cmake-examples-ex23-path": "cmake-examples-ex23-path",
         "cmake-examples-ex3-path": "cmake-examples-ex3-path",
         "cmake-examples-ex4-path": "cmake-examples-ex4-path",
         "cmake-examples-ex5-path": "cmake-examples-ex5-path",
