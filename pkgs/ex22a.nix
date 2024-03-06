@@ -1,6 +1,6 @@
 {
   # dependencies
-  stdenv, cmake, catch2, pkg-config, python3Packages, boost, zlib, # ... other deps here
+  stdenv, doxygen, cmake, catch2, pkg-config, python3Packages, boost, zlib, # ... other deps here
 
   # args
   #   someconfigurationoption ? false
@@ -21,5 +21,5 @@ stdenv.mkDerivation (finalattrs:
     # run unit tests
     doCheck = true;
 
-    buildInputs = [ cmake pkg-config pybind11 sphinx catch2 boost zlib ];
+    buildInputs = [ cmake pkg-config pybind11 sphinx doxygen catch2 boost zlib ];
   })
