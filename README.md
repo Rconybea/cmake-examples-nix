@@ -1,6 +1,7 @@
 # Introduction
 
-Nix build for cmake-example project: https://github.com/Rconybea/cmake-examples
+- Nix build for cmake-example project: https://github.com/Rconybea/cmake-examples
+- Motivation/Discussion: https://rconybea.github.io/web/nix/nix-for-your-own-project.html
 
 # Build
 
