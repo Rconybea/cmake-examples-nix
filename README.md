@@ -44,6 +44,6 @@ $ nix develop -i --keep HOME --keep TERM --keep DISPLAY --keep SSH_AUTH_SOCK --k
 
 # Links
 
-https://github.com/vlktomas/nix-examples
-https://ryantm.github.io/nixpkgs/stdenv/stdenv
-https://jade.fyi/blog/#flakes-arent-real  Jade Lovelace editorial on flakes+nixpkgs
+- https://github.com/vlktomas/nix-examples         Tomas Vlk nix examples
+- https://ryantm.github.io/nixpkgs/stdenv/stdenv   nix stdenv
+- https://jade.fyi/blog/#flakes-arent-real         Jade Lovelace editorial on flakes+nixpkgs
