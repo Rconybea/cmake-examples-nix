@@ -1,3 +1,7 @@
+# Introduction
+
+Nix build for cmake-example project: https://github.com/Rconybea/cmake-examples
+
 # Build
 
 Examples are progressive.  Each iteration has its own git branch.
@@ -42,4 +46,4 @@ $ nix develop -i --keep HOME --keep TERM --keep DISPLAY --keep SSH_AUTH_SOCK --k
 
 https://github.com/vlktomas/nix-examples
 https://ryantm.github.io/nixpkgs/stdenv/stdenv
-https://jade.fyi/blog/#flakes-arent-real
+https://jade.fyi/blog/#flakes-arent-real  Jade Lovelace editorial on flakes+nixpkgs
