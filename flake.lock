@@ -445,11 +445,11 @@
     "cmake-examples-ex22-path": {
       "flake": false,
       "locked": {
-        "lastModified": 1709694033,
-        "narHash": "sha256-9XsNJSqHtqEvRmhl6f4oP/qo02RIR7JKp7jsKizwUPE=",
+        "lastModified": 1709697628,
+        "narHash": "sha256-FpN+Zai/MkK18iOFDBby2u0r4/Du2g3gAXqBK2mDuYY=",
         "owner": "Rconybea",
         "repo": "cmake-examples",
-        "rev": "6fc209fb5ed3070d5ea9d79d798d605f45213d31",
+        "rev": "d78590748638a403cd2b360affa7397eba59844e",
         "type": "github"
       },
       "original": {
@@ -462,11 +462,11 @@
     "cmake-examples-ex22a-path": {
       "flake": false,
       "locked": {
-        "lastModified": 1709694100,
-        "narHash": "sha256-PowtXucNBIkRoV6vkd6KAf5nokIwVwIg2YQ98Tj3vPA=",
+        "lastModified": 1709699013,
+        "narHash": "sha256-Polpd2+DiZF615sih6HLOtzj0LaaFkQxrN6Jobdnq7M=",
         "owner": "Rconybea",
         "repo": "cmake-examples",
-        "rev": "256547c872703c003859f97fef6fe004f631ff01",
+        "rev": "6d14f4146f2c7fc2011dd6790947ea261575304e",
         "type": "github"
       },
       "original": {
@@ -479,11 +479,11 @@
     "cmake-examples-ex23-path": {
       "flake": false,
       "locked": {
-        "lastModified": 1709694100,
-        "narHash": "sha256-PowtXucNBIkRoV6vkd6KAf5nokIwVwIg2YQ98Tj3vPA=",
+        "lastModified": 1709699013,
+        "narHash": "sha256-Polpd2+DiZF615sih6HLOtzj0LaaFkQxrN6Jobdnq7M=",
         "owner": "Rconybea",
         "repo": "cmake-examples",
-        "rev": "256547c872703c003859f97fef6fe004f631ff01",
+        "rev": "6d14f4146f2c7fc2011dd6790947ea261575304e",
         "type": "github"
       },
       "original": {

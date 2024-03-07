@@ -1,0 +1,8 @@
+- for nix-build to work after:
+  - adding a new file ./pkgs/foo.nix
+  - modifying an existing file ./pkgs/foo.nix
+
+  addition/modifications must be committed to git.
+
+  (./pkgs/foo.nix will be copied to a directory under /nix/store,
+  and the exact path relies on git hash).

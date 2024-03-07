@@ -23,4 +23,9 @@ stdenv.mkDerivation (finalattrs:
     doCheck = true;
 
     buildInputs = [ cmake pkg-config  pybind11 sphinx doxygen breathe catch2 boost zlib ];
+
+    buildPhase = ''
+      make
+      make doxygen
+    '';
   })

@@ -1,7 +1,24 @@
 {
   description = "Flake for cmake-examples project";
 
-  # to get specific hash:
+  # MANIFESTO
+  # No build instructions in flake.nix
+  # - Following Jade Lovelace's advice
+  # - Build instructions are in pkgs/*.nix
+  # - Each pkgs/*.nix is intended to work 'like a .nix file in nixpkgs'
+  #   I'm being lazy about source hashes,  since flake.nix supplies them.
+  #
+  # Motivation (per JL) versus doing everything in flake.nix:
+  # - nixpkgs-ready
+  # - parameterized
+  # - overridable
+  # - still works if cross-compiling
+  #
+  # Instead:  using flake.nix as entry point:
+  # - pin nixpkgs to a specific revision,  for reproducibility
+  # - pin our candidate packages (pkgs/*.nix),  for the same reason.
+
+  # to determine specific hash for nixpkgs:
   # 1. $ cd ~/proj/nixpkgs
   # 2. $ git checkout release-23.05
   # 3. $ git fetch
@@ -18,10 +35,12 @@
   #
   inputs.nixpkgs.url = "https://github.com/NixOS/nixpkgs/archive/4dd376f7943c64b522224a548d9cab5627b4d9d6.tar.gz";
 
-  # inputs.nixpkgs.url = "https://github.com/NixOS/nixpkgs/archive/fac3684647cc9d6dfb2a39f3f4b7cf5fc89c96b6.tar.gz"; # working as of 8feb2024
+  # inputs.nixpkgs.url
+  #   = "https://github.com/NixOS/nixpkgs/archive/fac3684647cc9d6dfb2a39f3f4b7cf5fc89c96b6.tar.gz"; # asof 8feb2024
   # fac3684647.. asof 17oct2023
   # instead of
   #   inputs.nixpkgs.url = "github:nixos/nixpkgs/23.05";
+
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
   # branches:
@@ -183,7 +202,8 @@
                       extras1 = { boost = boost; };
                       extras2 = { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; };
                       extras3 = { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; doxygen = doxygen; };
-                      extras4 = { boost = boost; python3Packages = python3Packages; pybind11 = pybind11; doxygen = doxygen; breathe = breathe; };
+                      extras4 = extras3 // { breathe = breathe; };
+
                     in
                       {
                         #cmake-examples-ex1b = prev.cmake-examples-ex1b.overrideAttrs (prev: {src = cmake-examples-ex1b-path; });

@@ -1,0 +1,14 @@
+goals
+
+- define local-only packages; package names do not have to appear in nixpkgs
+  For example 'cmake-examples-ex1' is a local package
+
+- use nix flakes for version pinning.
+
+- avoid allowing build instructions in flake.nix.
+  Motivation:
+  - flakes do not support cross-compilation (see Jade Lovelace's blog)
+  - flakes do not support parameterization.
+
+- define packages "the nixpkgs way" so that they can be trivially incorporated into nixpkgs,
+  should we so desire.
